@@ -33,25 +33,11 @@ SBT-DF203-Lab7/
 
 ## Forensic Conclusion
 
-The forensic analysis of our DNS traffic packet captures demonstrates the 
-complete operational lifecycle and behavioral metadata of domain resolution 
-across both baseline CLI tools and modern web browsers. By inspecting the 
-pcapng files using `tshark`, I verified that standard DNS resolutions 
-complete a rapid query-response exchange with matching transaction IDs, 
-while subsequent connection correlation highlights how specific capture filters, 
-such as restricting collection strictly to port 53, omit lower-layer 
-TCP handshakes at the kernel level despite valid IP answers being returned 
-by Cloudflare's CDN. Comparing these evidence files against application-level 
-captures from mail services confirms how host system mechanisms rely 
-on pre-connection `A` record lookups to locate target endpoints before initiating 
-protocol-specific sessions like SMTP. To ensure comprehensive forensic visibility 
-and evidence integrity, I resolved local filesystem permission barriers, properly 
-managed capture duration windows, and verified that query inventories accurately 
-reflected live network activity without background interference. 
-This investigation proves that you cannot assume an empty packet capture or 
-missing connection payload indicates a network failure; you must evaluate capture 
-filter scopes, local caching, and resolver behaviors to accurately interpret wire-level 
-telemetry. Finally, because this evidence relies strictly on captured network packets, 
-it provides an exact account of DNS transactions on the wire during testing but does not 
-record offline operating system cache state, local hosts file overrides, or internal application 
-logs outside the monitored network interfaces.
+The forensic analysis of our DNS traffic packet captures demonstrates the complete operational lifecycle and behavioral metadata of domain resolution 
+across both baseline CLI tools and modern web browsers.
+By inspecting the pcapng files using `tshark`, I verified that standard DNS resolutions complete a rapid query-response exchange with matching transaction IDs, while subsequent connection correlation highlights how specific capture filters, such as restricting collection strictly to port 53, omit lower-layer TCP handshakes at the kernel level despite valid IP answers being returned 
+by Cloudflare's CDN.
+Comparing these evidence files against application-level captures from mail services confirms how host system mechanisms rely on pre-connection `A` record lookups to locate target endpoints before initiating protocol-specific sessions like SMTP. To ensure comprehensive forensic visibility and evidence integrity, I resolved local filesystem permission barriers, properly managed capture duration windows, and verified that query inventories accurately reflected live network activity without background interference. 
+This investigation proves that you cannot assume an empty packet capture or missing connection payload indicates a network failure; you must evaluate capture filter scopes, local caching, and resolver behaviors to accurately interpret wire-level telemetry.
+
+Finally, because this evidence relies strictly on captured network packets, it provides an exact account of DNS transactions on the wire during testing but does not record offline operating system cache state, local hosts file overrides, or internal application logs outside the monitored network interfaces.
