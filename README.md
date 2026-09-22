@@ -32,6 +32,7 @@ SBT-DF203-Lab7/
 
 
 ## Forensic Conclusion
+
 The forensic analysis of our DNS traffic packet captures demonstrates the 
 complete operational lifecycle and behavioral metadata of domain resolution 
 across both baseline CLI tools and modern web browsers. By inspecting the 
