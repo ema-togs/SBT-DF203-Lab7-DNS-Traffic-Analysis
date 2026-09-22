@@ -21,14 +21,14 @@ This repository contains the forensic artifacts, packet captures, and analytical
 
 ## Repository Structure
 
-
+```text
 SBT-DF203-Lab7/
-├── evidence/        # Baseline and browser pcapng packet captures
-├── exported/        # Extracted objects and reconstructed forensic data
-├── reports/         # Processed TSV inventories and correlation text logs
-├── screenshots/     # Visual proof of lab execution and terminal output
-├── scripts/         # Command-line workflows and Tshark extraction queries
-└── working/         # Temporary analysis workspace files
+├── evidence/      # Baseline and browser pcapng packet captures
+├── exported/      # Extracted objects and reconstructed forensic data
+├── reports/       # Processed TSV inventories and correlation text logs
+├── screenshots/   # Visual proof of lab execution and terminal output
+├── scripts/       # Command-line workflows and Tshark extraction queries
+└── working/       # Temporary analysis workspace files
 
 
 ## Forensic Conclusion
